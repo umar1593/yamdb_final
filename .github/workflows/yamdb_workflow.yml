@@ -49,12 +49,12 @@ jobs:
     needs: build_and_push_to_docker_hub
     if: github.ref == 'refs/heads/master'
     env: |
-      DB_ENGINE: ${{ secrets.DB_ENGINE }}
-      DB_NAME: ${{ secrets.DB_NAME }}
-      POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
-      POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
-      DB_HOST: ${{ secrets.DB_HOST }}
-      DB_PORT: ${{ secrets.DB_PORT }}
+      'DB_ENGINE': ${{ secrets.DB_ENGINE }}
+      'DB_NAME': ${{ secrets.DB_NAME }}
+      'POSTGRES_USER': ${{ secrets.POSTGRES_USER }}
+      'POSTGRES_PASSWORD': ${{ secrets.POSTGRES_PASSWORD }}
+      'DB_HOST': ${{ secrets.DB_HOST }}
+      'DB_PORT': ${{ secrets.DB_PORT }}
     steps:
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
